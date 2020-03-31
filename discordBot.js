@@ -7,7 +7,7 @@ const scraper = require('./index.js');
 console.log('Now listening for messages.')
 
 client.on('message', async (message) => {
-    if (message.content.includes("https://pastebin.com/")) {
+    if (message.content.includes("https://pastebin.com/" || "http://pastebin.com/")) {
         let pasteId = message.content.split("https://pastebin.com/")[1];
         console.log(`Paste found expanding. (${pasteId})`);
 
