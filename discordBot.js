@@ -9,7 +9,8 @@ console.log('Now listening for messages.')
 client.on('message', async (message) => {
     if (message.content.includes("https://pastebin.com/")) {
         let pasteId = message.content.split("https://pastebin.com/")[1];
-        console.log(pasteId);
+        console.log(`Paste found expanding. (${pasteId})`);
+
         scraper.getPasteText(pasteId).then((body) => {
           console.log(`Body: ${body}`);
           message.channel.send(`Paste content: ${body}`);
